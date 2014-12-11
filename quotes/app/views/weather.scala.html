@@ -1,0 +1,23 @@
+@(message: Any)
+
+@main("weatherApp", "WeatherController") {
+	<div class="col-md-2">
+		<form role="form">
+	  		<div class="form-group">
+	    		<label for="quote">City:</label>
+	    		<input ng-model="city" type="text" class="form-control" id="weather" placeholder="Name of city - type 'Gdansk'"/>
+	  		</div>
+	  		<button ng-click="fetchWeather()" type="button" class="btn btn-default">Search</button>
+		</form>
+		</br>
+		
+		<div ng-repeat="w in weather">
+			<div class="panel panel-default">
+	  			<div class="panel-body">
+	    			{{w.temp}}
+	  			</div>
+	  			<div class="panel-footer">{{w.city}} - {{w.country}}</div>
+			</div>
+		</div>
+	</div>
+}

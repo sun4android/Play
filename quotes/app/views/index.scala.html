@@ -1,0 +1,23 @@
+@(message: Any)
+
+@main("quoteApp", "QuoteController") {
+	<div class="col-md-2">
+		<form role="form">
+	  		<div class="form-group">
+	    		<label for="quote">Quote:</label>
+	    		<input ng-model="keyword" type="text" class="form-control" id="quote" placeholder="Keyword, type - 'you'"/>
+	  		</div>
+	  		<button ng-click="fetchQuotes()" type="button" class="btn btn-default">Search</button>
+		</form>
+		</br>
+		
+		<div ng-repeat="quote in quotes">
+			<div class="panel panel-default">
+  				<div class="panel-body">
+    				{{quote.text}}
+  				</div>
+  				<div class="panel-footer">{{quote.author}}</div>
+			</div>
+		</div>
+	</div>
+}
